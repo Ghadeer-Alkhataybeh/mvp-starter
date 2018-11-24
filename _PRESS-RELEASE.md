@@ -17,19 +17,19 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > my precious moments / diary.
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > Get the old days back <3.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > save your my precious moments and get it back to remeber old days.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > losing your imprtant moments when ever you swivh a mobile or a device.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  >  you will be able to reach them from anywhere on any device.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
