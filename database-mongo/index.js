@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'); //include mongoose in our project
-mongoose.connect('mongodb://localhost/test77');// and open a connection to the test database on our locally running instance of MongoDB.
+mongoose.connect('mongodb://localhost/test');// and open a connection to the test database on our locally running instance of MongoDB.
 
 
 //We have a pending connection to the test database running on localhost. 
@@ -12,7 +12,7 @@ db.on('error', function() {
 });
 
 db.once('open', function() {
-  console.log('mongoose connected successfully 77');
+  console.log('mongoose connected successfully');
 });
 
 //everything is derived from a Schema in mongoose. Let's get a reference to it and define our schema
