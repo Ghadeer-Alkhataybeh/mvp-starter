@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'); //include mongoose in our project
-mongoose.connect('mongodb://localhost/test');// and open a connection to the test database on our locally running instance of MongoDB.
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds115664.mlab.com:15664/diary-db');// and open a connection to the test database on our locally running instance of MongoDB.
 
 
 //We have a pending connection to the test database running on localhost. 
