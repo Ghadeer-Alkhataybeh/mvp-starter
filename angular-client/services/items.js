@@ -12,3 +12,19 @@ angular.module('app')
     });
   };
 });
+
+
+angular.module('app')
+.service('itemsService2', function($http) {
+  this.postAll = function(callback) {
+    $http.post('/adddiary')
+    .then(function({data}) {
+      if(callback) {
+        callback(data);
+      }
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+  };
+});

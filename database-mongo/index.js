@@ -1,4 +1,5 @@
 var mongoose = require('mongoose'); //include mongoose in our project
+//mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://Ghadeer:@gg835864@ds115664.mlab.com:15664/diary-db');// and open a connection to the test database on our locally running instance of MongoDB.
 
 
@@ -23,17 +24,33 @@ var itemSchema = mongoose.Schema({
 
 var Item = mongoose.model('Item', itemSchema); //compiling our schema into a Model. A model is a class with which we construct documents.
 // In this case, each document will be an item with properties and behaviors as declared in our schema.
+// var save = db.collection.save(
+//    <document>,
+//    {
+//      writeConcern: <document>
+//    }
+//)
+
+var save = function(data,cb){
+         Item.collection.insertMany(data,function(err,result){
+         if (result){
+          cb(result)
+         }
+       })
+}
 
 
-
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
-};
-
+  var selectAll = function(callback) {
+    Item.find({}, function(err, items) {
+      if(err) {
+        callback(err, null);
+      } else {
+        callback(null, items);
+      }
+    });
+  };
+module.exports.save = save;
 module.exports.selectAll = selectAll;
+
+
+
