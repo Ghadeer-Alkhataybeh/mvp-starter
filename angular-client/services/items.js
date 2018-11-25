@@ -13,18 +13,18 @@ angular.module('app')
   };
 });
 
-
 angular.module('app')
 .service('itemsService2', function($http) {
-  this.postAll = function(callback) {
-    $http.post('/items')
-    .then(function({data}) {
-      if(callback) {
-        callback(data);
-      }
+  this.postAll = function(data,callback) {
+    console.log("what the input is3333333:",data)
+
+
+    $http.post('/items',{description: data}).then(function(res2) {
+     
     })
     .catch(function(err) {
       console.log(err);
     });
   };
 });
+

@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var request = require('request');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
- var items = require('../database-mongo/index.js');
+var items = require('../database-mongo/index.js');
 
 var app = express();
 app.use(bodyParser.json());
@@ -20,14 +20,13 @@ app.use(express.static(__dirname + '/../node_modules'));
 
 app.post("/items", (req, res) => {
 
-	console.log("server is posting")
-  console.log("req.body",req.body.description)
+  // console.log("req.body",req.body.description)
   var data2=req.body
-	items.save(data2,function(result){
-		res.send('done')
-	})
+  items.save(data2,function(result){
+    res.send('done from server for this data')
+  })
 
- 
+  
 });
 
 

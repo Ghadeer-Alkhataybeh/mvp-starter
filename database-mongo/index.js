@@ -9,7 +9,7 @@ mongoose.connect('mongodb://Ghadeer:isa123@ds115664.mlab.com:15664/diary-db');//
 var db = mongoose.connection;
 
 db.on('error', function() {
-  console.log('mongoooooose connection error');
+  console.log('mongoose connection error');
 });
 
 db.once('open', function() {
@@ -23,14 +23,6 @@ var itemSchema = mongoose.Schema({
 
 var Item = mongoose.model('Item', itemSchema); //compiling our schema into a Model. A model is a class with which we construct documents.
 // In this case, each document will be an item with properties and behaviors as declared in our schema.
-// var save = db.collection.save(
-//    <document>,
-//    {
-//      writeConcern: <document>
-//    }
-//)
-
-
 
 
 var save = function(data,cb){
