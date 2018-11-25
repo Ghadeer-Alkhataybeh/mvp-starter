@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'); //include mongoose in our project
 //mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://Ghadeer:@gg835864@ds115664.mlab.com:15664/diary-db');// and open a connection to the test database on our locally running instance of MongoDB.
+mongoose.connect('mongodb://Ghadeer:isa123@ds115664.mlab.com:15664/diary-db');// and open a connection to the test database on our locally running instance of MongoDB.
 
 
 //We have a pending connection to the test database running on localhost. 
@@ -9,7 +9,7 @@ mongoose.connect('mongodb://Ghadeer:@gg835864@ds115664.mlab.com:15664/diary-db')
 var db = mongoose.connection;
 
 db.on('error', function() {
-  console.log('mongoose connection error');
+  console.log('mongoooooose connection error');
 });
 
 db.once('open', function() {
@@ -18,8 +18,7 @@ db.once('open', function() {
 
 //everything is derived from a Schema in mongoose. Let's get a reference to it and define our schema
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+   description: String
 });
 
 var Item = mongoose.model('Item', itemSchema); //compiling our schema into a Model. A model is a class with which we construct documents.
@@ -31,13 +30,18 @@ var Item = mongoose.model('Item', itemSchema); //compiling our schema into a Mod
 //    }
 //)
 
+
+
+
 var save = function(data,cb){
-         Item.collection.insertMany(data,function(err,result){
-         if (result){
-          cb(result)
-         }
+var item = new Item({description: data.description})
+  
+         item.save(function(err,result){
+          if(err){
+         console.log("err",err)}
+        
        })
-}
+};
 
 
   var selectAll = function(callback) {

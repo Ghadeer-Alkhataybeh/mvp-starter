@@ -17,7 +17,7 @@ angular.module('app')
 angular.module('app')
 .service('itemsService2', function($http) {
   this.postAll = function(callback) {
-    $http.post('/adddiary')
+    $http.post('/items')
     .then(function({data}) {
       if(callback) {
         callback(data);
