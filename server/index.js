@@ -44,27 +44,9 @@ app.get('/items', function (req, res) {
   
 });
 
-// app.get('/diaries',function(req,res){
-// 	res.send(diaries)
-// })
 
 app.listen(process.env.PORT || 3000, function() {
   console.log('listening on port 3000!');
 });
 
 
-// app.post('/diaries', function (req, res) {
-
-//   var input=req.body.data;  
-//   console.log("BACKEND POST SERVER:",input)
-
-//  githup.getReposByUsername(user_name , function (azhar) { 	
-//  console.log("SERVER GET FORM GITHUB:",typeof azhar)
-//  var parsed = azhar.parse
-
-//   Save.save(parsed);
-//  }) 
-
-//  // console.log("we got respone")
-//  res.send("done post")
-// });
